@@ -1,0 +1,24 @@
+
+
+[hardware]
+  model = "E5080B"
+  address = "TCPIP0::192.168.1.78::inst0::INSTR"
+  attenuation = 105
+  port = "S11"
+
+[sample]
+  name = "ITRI"
+
+
+[[measurement]]
+  label = "C100"
+  output = "D:\\Data\\resonator\\test"
+
+  IF_bandwidth = 20
+  power = -20
+  repeat = 3
+  [measurement.frequency]
+    start = 4e9
+    stop = 8e9
+    points = 501
+
