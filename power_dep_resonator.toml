@@ -1,0 +1,80 @@
+[hardware]
+model = "E5080B"
+address = "TCPIP0::192.168.1.78::inst0::INSTR"
+attenuation = 110
+port = "S43"
+
+[sample]
+name = "5Q4C_AS139_0605_3sccm"
+
+[[measurement]]
+label = "C6000"
+IF_bandwidth = 100
+power = -50.0
+repeat = 5
+output = "D:\\Data\\resonator\\test\\data\\C6000\\att110_-50.0"
+
+[measurement.frequency]
+start = 5999000000.0
+stop = 6001000000.0
+points = 501
+
+[[measurement]]
+label = "C6000"
+IF_bandwidth = 100
+power = -30.0
+repeat = 1
+output = "D:\\Data\\resonator\\test\\data\\C6000\\att110_-30.0"
+
+[measurement.frequency]
+start = 5999000000.0
+stop = 6001000000.0
+points = 501
+
+[[measurement]]
+label = "C6000"
+IF_bandwidth = 100
+power = -10.0
+repeat = 1
+output = "D:\\Data\\resonator\\test\\data\\C6000\\att110_-10.0"
+
+[measurement.frequency]
+start = 5999000000.0
+stop = 6001000000.0
+points = 501
+
+[[measurement]]
+label = "C5800"
+IF_bandwidth = 100
+power = -50.0
+repeat = 5
+output = "D:\\Data\\resonator\\test\\data\\C5800\\att110_-50.0"
+
+[measurement.frequency]
+start = 5799000000.0
+stop = 5801000000.0
+points = 501
+
+[[measurement]]
+label = "C5800"
+IF_bandwidth = 100
+power = -30.0
+repeat = 1
+output = "D:\\Data\\resonator\\test\\data\\C5800\\att110_-30.0"
+
+[measurement.frequency]
+start = 5799000000.0
+stop = 5801000000.0
+points = 501
+
+[[measurement]]
+label = "C5800"
+IF_bandwidth = 100
+power = -10.0
+repeat = 1
+output = "D:\\Data\\resonator\\test\\data\\C5800\\att110_-10.0"
+
+[measurement.frequency]
+start = 5799000000.0
+stop = 5801000000.0
+points = 501

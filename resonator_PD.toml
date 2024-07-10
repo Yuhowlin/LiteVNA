@@ -3,29 +3,45 @@
 [hardware]
   model = "E5080B"
   address = "TCPIP0::192.168.1.78::inst0::INSTR"
-  attenuation = 109
-  port = "S21"
+  attenuation = 110
+  port = "S43"
 
 [sample]
-  name = "ITRI_364_scalinQ"
+  name = "5Q4C_AS139_0605_3sccm"
 
 [output]
-  task_path = "D:\\Data\\resonator\\ITRI_364_scalinQ\\task"
-  data_path = "D:\\Data\\resonator\\ITRI_364_scalinQ\\data"
+  data_path = "D:\\Data\\resonator\\test\\data"
 
 [[resonator]]
-  label = "C46277"
-  IF_bandwidth = 20
+  label = "C6000"
+  IF_bandwidth = 100
   [resonator.snr]
-    max_repeat = 50
-    min_repeat = 2
+    max_repeat = 5
+    min_repeat = 1
     power_ave_ratio = -140
 
   [resonator.power]
-    min = -60
-    max = -20
-    step = 5
+    min = -50
+    max = 0
+    step = 20
   [resonator.frequency]
-    start = 4.62755e9
-    stop = 4.62780e9
+    start = 5.999e9
+    stop = 6.001e9
+    points = 501
+
+[[resonator]]
+  label = "C5800"
+  IF_bandwidth = 100
+  [resonator.snr]
+    max_repeat = 5
+    min_repeat = 1
+    power_ave_ratio = -140
+
+  [resonator.power]
+    min = -50
+    max = 0
+    step = 20
+  [resonator.frequency]
+    start = 5.799e9
+    stop = 5.801e9
     points = 501
