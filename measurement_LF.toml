@@ -1,8 +1,8 @@
 [hardware]
   model = "E5080B"
   address = "TCPIP0::192.168.1.78::inst0::INSTR"
-  attenuation = 75
-  port = "S43"
+  attenuation = 80
+  port = "S21"
 
 [sample]
   name = "ITRI"
@@ -10,25 +10,12 @@
 
 [[measurement]]
   label = "C100"
-  output = "D:\\Data\\resonator\\test"
+  output = "C:\\Users\\ASUS\\Documents\\python training\\THINFAT"
 
-  IF_bandwidth = 200
-  power = 0
-  repeat = 3
+  IF_bandwidth = 1000
+  power = -20
+  repeat = 1
   [measurement.frequency]
-    start = 5.725e9
-    stop = 5.760e9
-    points = 1001
-  
-[[measurement]]
-  label = "C200"
-  output = "D:\\Data\\resonator\\test"
-
-  IF_bandwidth = 200
-  power = 0
-  repeat = 2
-  [measurement.frequency]
-    start = 5.725e9
-    stop = 5.760e9
-    points = 1001
-  
+    start = 5.9002e9
+    stop = 5.90055e9
+    points = 501
