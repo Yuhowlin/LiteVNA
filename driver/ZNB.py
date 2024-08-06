@@ -14,6 +14,10 @@ class VNA_ZNB20:
             print(f'Connected to: {self.vna.IDN()}')
         except Exception as e:
             print(f"Connection error: {e}")
+    
+    def check_error(self):
+        # Check for errors
+        pass
 
     def delete_all_traces(self):
         self.vna.clear_channels()
@@ -32,11 +36,10 @@ class VNA_ZNB20:
     def set_sweep_points(self, points: int):
         getattr(self.vna.channels, self.current_channel).npts(points)
 
-    def set_if_bandwidth(self, bandwidth: int):
+    def set_IF_bandwidth(self, bandwidth: int):
         getattr(self.vna.channels, self.current_channel).bandwidth(bandwidth)
 
     def get_data(self):
-        self.set_data_format()
         magnitude_phase_data = getattr(self.vna.channels, self.current_channel).trace_db_phase.get()
         magnitudes_db = magnitude_phase_data[0]
         phases = magnitude_phase_data[1]
@@ -51,14 +54,16 @@ class VNA_ZNB20:
         getattr(self.vna.channels, self.current_channel).power(power)
 
     def measure(self):
+        self.vna.rf_on()
         meas = Measurement()
         meas.register_parameter(getattr(self.vna.channels, self.current_channel).trace_db_phase)
 
-    def lin_freq_sweep(self, start, stop, points: int, port: str = "S21", power: float = -20, if_bandwidth: int = 1000):
+    def lin_freq_sweep(self, start, stop, points: int, port, power: float = -20, IF_bandwith: int = 1000):
+        
         self.delete_all_traces()
         self.setup_measurement(port)
         self.set_power(power)
-        self.set_if_bandwidth(if_bandwidth)
+        self.set_IF_bandwidth(IF_bandwith)
         self.set_linfreq(start, stop)
         self.set_sweep_points(points)
 
@@ -86,7 +91,7 @@ class VNA_ZNB20:
             pass
 
 if __name__ == '__main__':
-    address = "TCPIP0::192.168.1.78::inst0::INSTR"
+    address = 'TCPIP0::192.168.50.249::inst0::INSTR'
     vna = VNA_ZNB20(address)
 
     start_freq = 5e9
@@ -94,9 +99,9 @@ if __name__ == '__main__':
     points = 1001
     port = "S21"
     power = -20
-    if_bandwidth = 1000
+    IF_bandwidth = 1000
 
-    freq, data = vna.lin_freq_sweep(start_freq, stop_freq, points, port, power, if_bandwidth)
+    freq, data = vna.lin_freq_sweep(start_freq, stop_freq, points, port, power, IF_bandwidth)
 
     plt.plot(freq, 20 * np.log10(np.abs(data)))
     plt.xlabel('Frequency (Hz)')

@@ -1,21 +1,21 @@
 [hardware]
-  model = "E5080B"
-  address = "TCPIP0::192.168.1.78::inst0::INSTR"
+  model = "ZNB"
+  address = 'TCPIP0::192.168.50.249::inst0::INSTR'
   attenuation = 80
-  port = "S21"
+  port = "S43"
 
 [sample]
   name = "ITRI"
 
 
 [[measurement]]
-  label = "C100"
-  output = "C:\\Users\\ASUS\\Documents\\python training\\THINFAT"
+  label = "test"
+  output = "C:\\Users\\ASUS\\Documents\\python training\\lite_testing"
 
   IF_bandwidth = 1000
   power = -20
   repeat = 1
   [measurement.frequency]
-    start = 5.9002e9
-    stop = 5.90055e9
+    start = 4e9
+    stop = 8e9
     points = 501
