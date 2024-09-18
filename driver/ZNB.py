@@ -55,6 +55,7 @@ class VNA_ZNB20:
 
     def measure(self):
         self.vna.rf_on()
+        self.vna.channels.avg(1)
         meas = Measurement()
         meas.register_parameter(getattr(self.vna.channels, self.current_channel).trace_db_phase)
 
