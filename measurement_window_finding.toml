@@ -1,8 +1,8 @@
 [hardware]
-  model = "E5080B"
-  address = 'TCPIP0::192.168.1.78::inst0::INSTR'
+  model = "ZNB"
+  address = 'TCPIP0::192.168.1.218::inst0::INSTR'
   attenuation = 80
-  port = "S21"
+  port = "S43"
 
 [sample]
   name = "ITRI"
@@ -11,19 +11,9 @@
 [[measurement]]
 
   IF_bandwidth = 1000
-  power = 10
+  power = -20
   
   [measurement.frequency]
-    deltafre = 5e6
-    resonator_fre = 4.5312e9
-    points = 501
-
-[[measurement]]
-
-  IF_bandwidth = 1000
-  power = 10
-  
-  [measurement.frequency]
-    deltafre = 5e6
-    resonator_fre = 4.6157e9
+    deltafre = 10e6
+    resonator_fre = 4.7612e9
     points = 501
